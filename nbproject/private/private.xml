@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Programs/OSPanel/domains/ishop/public/css/main.css</file>
+            <file>file:/D:/Programs/OSPanel/domains/ishop/resources/views/layouts/app.blade.php</file>
+            <file>file:/D:/Programs/OSPanel/domains/ishop/app/Http/routes.php</file>
+            <file>file:/D:/Programs/OSPanel/domains/ishop/app/Http/Controllers/Auth/AuthController.php</file>
+            <file>file:/D:/Programs/OSPanel/domains/ishop/resources/views/index.blade.php</file>
         </group>
     </open-files>
 </project-private>
