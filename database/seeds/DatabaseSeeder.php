@@ -41,7 +41,7 @@ class CategoriesTableSeeder extends Seeder {
         Category::create(['name' => 'Смартфоны', 'sort_order' => 2, 'status' => true]);
         Category::create(['name' => 'Комплектующие', 'sort_order' => 3, 'status' => true]);
         Category::create(['name' => 'Игровые приставки', 'sort_order' => 4, 'status' => true]);
-        Category::create(['name' => 'Тедевизоры', 'sort_order' => 5, 'status' => true]);
+        Category::create(['name' => 'Телевизоры', 'sort_order' => 5, 'status' => true]);
     }
 
 }

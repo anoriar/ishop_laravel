@@ -24,7 +24,7 @@ class ProductController extends Controller {
     }
 
     public function showDetails($id) {
-        $product = Product::select('id', 'name', 'price', 'count', 'preview', 'description', 'is_new', 'is_recommended')->where('id', $id)->first();
+        $product = Product::select('id', 'name', 'price', 'count', 'code', 'brand', 'preview', 'description', 'is_new', 'is_recommended')->where('id', $id)->first();
         $categories = Category::select('id', 'name')->get();
         return view('product.details', ['product' => $product, 'categories' => $categories]);
     }
