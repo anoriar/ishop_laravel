@@ -1117,6 +1117,10 @@ h2.title {
     width: 100%;
 }
 
+.pgn-wrapper{
+    text-align: center;
+}
+
 .pagination {
     display: inline-block;
     margin-bottom: 25px;

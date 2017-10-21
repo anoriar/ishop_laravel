@@ -23,26 +23,33 @@
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Последние товары</h2>
-                    @foreach($lastProducts as $item)
-                    <div class='col-sm-4'>
-                        <div class='product-image-wrapper'>
-                            <div class='single-products'>
-                                <div class='productinfo text-center'>
-                                    <div class='img-wrapper'>
-                                        <img src='{{ asset($item->preview) }}' alt='' />
+                    <div class="row">
+                        @foreach($lastProducts as $item)
+                        <div class='col-sm-4'>
+                            <div class='product-image-wrapper'>
+                                <div class='single-products'>
+                                    <div class='productinfo text-center'>
+                                        <div class='img-wrapper'>
+                                            <img src='{{ asset($item->preview) }}' alt='' />
+                                        </div>
+                                        <h2>{{ number_format($item->price, 0, ',', ' ') }} RUB</h2>
+                                        <a href='/product/{{ $item->id }}'><p> {{ $item->name }}</p></a>
+                                        <a href='#' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>В корзину</a>
                                     </div>
-                                    <h2>{{ number_format($item->price, 0, ',', ' ') }} RUB</h2>
-                                    <a href='/product/{{ $item->id }}'><p> {{ $item->name }}</p></a>
-                                    <a href='#' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>В корзину</a>
+                                    @if($item -> is_new)
+                                    <img src='{{ asset('images/views/index/new.png') }}' class='new' alt=''>
+                                    @endif
                                 </div>
-                                @if($item -> is_new)
-                                <img src='{{ asset('images/views/index/new.png') }}' class='new' alt=''>
-                                @endif
                             </div>
                         </div>
+                        @endforeach
                     </div>
-                    @endforeach
-                   
+                    <div class="row">
+                        <div class="pgn-wrapper"> 
+                            {{$lastProducts -> links()}}
+                        </div>
+                    </div>
+
                 </div><!--features_items-->
             </div>
         </div>
