@@ -65,11 +65,23 @@
                         </div>
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
-                                <ul class="nav navbar-nav">                                    
+                                <ul class="nav navbar-nav"> 
                                     <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
-                                    <li><a href="#"><i class="fa fa-user"></i> Аккаунт</a></li>
+                                    @if (Auth::guest())
+
+                                    <li><a href="{{ url('/register') }}"><i class="fa fa-user"></i> Регистрация</a></li>
                                     <li><a href="{{url('/login')}}"><i class="fa fa-lock"></i>Вход</a></li>
-                                     <li><a href="{{url('/register')}}">Регистрация</a></li>
+                                    @else
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
+
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
